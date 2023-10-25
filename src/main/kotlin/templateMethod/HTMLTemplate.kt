@@ -1,8 +1,6 @@
 package templateMethod
 
 abstract class HTMLTemplate {
-    private val headerTemplate: String = "templateMethod/resources/header.html"
-    private val footerTemplate: String = "templateMethod/resources/content.html"
     protected val builderHTMLTemplate = HTMLBuilder()
 
     fun generate(): String{
@@ -16,10 +14,12 @@ abstract class HTMLTemplate {
     protected abstract fun createContent()
 
     private fun createHeader(){
-        builderHTMLTemplate.withContent(HTMLFileConverter.getContent(headerTemplate))
+        builderHTMLTemplate
+            .withTag("p", "header")
     }
 
     private fun createFooter(){
-        builderHTMLTemplate.withContent(HTMLFileConverter.getContent(footerTemplate))
+        builderHTMLTemplate
+            .withTag("p", "footer")
     }
 }
