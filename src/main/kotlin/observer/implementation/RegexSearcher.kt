@@ -7,8 +7,7 @@ class RegexSearcher: Subscriber {
     override fun update(context: Context) {
         val userInput = context.getRelevantObject() as? String
         if(userInput != null){
-            var regex = Regex("a");
-            var matches = regex.matches(userInput)
+            var matches = Regex("a").matches(userInput)
             if(matches){
                 println("There're 'a's in your input")
             }
