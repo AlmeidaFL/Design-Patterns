@@ -10,7 +10,8 @@ abstract class Caretaker<T>(private val originator: Originator<T>) {
     }
 
     fun doCommand(command: Command){
-        history.add(originator.save())
+        val o = originator.save()
+        history.add(o)
         command.execute(originator)
     }
 }

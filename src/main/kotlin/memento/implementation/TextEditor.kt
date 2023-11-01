@@ -3,19 +3,28 @@ package memento.implementation
 import memento.Memento
 import memento.Originator
 
+
 class TextEditor: Originator<TextEditor> {
     var title = "Default title"
     var body = "Default body"
     var color = "Blue"
 
-    override fun save(): Memento<TextEditor> {
-        return object : Memento<TextEditor>(this){
+    fun copy() = TextEditor().also {
+        it.title = title
+        it.body = body
+        it.color = color
+    }
 
-        }
+    override fun save(): Memento<TextEditor> {
+        return Memento(this.copy())
     }
 
     override fun restore(memento: Memento<TextEditor>) {
-        TODO("Not yet implemented")
+        memento.let {
+            title = it.state.title
+            body = it.state.body
+            color = it.state.color
+        }
     }
 
     override fun toString(): String {

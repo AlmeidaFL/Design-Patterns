@@ -1,7 +1,3 @@
 package memento
 
-open class Memento<T>(val state: T){
-    fun getState(): T{
-        return state
-    }
-}
+data class Memento<T>(val state: T)
