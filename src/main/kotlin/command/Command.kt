@@ -1,5 +1,5 @@
 package command
 
 interface Command {
-    fun execute()
+    fun execute(any: Any? = null)
 }
