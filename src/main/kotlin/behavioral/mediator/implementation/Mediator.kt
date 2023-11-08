@@ -1,6 +1,5 @@
 package behavioral.mediator.implementation
 
-import behavioral.mediator.EventType
 import behavioral.mediator.IMediator
 
 class Mediator: IMediator {

@@ -1,4 +1,4 @@
-package behavioral.mediator
+package behavioral.mediator.implementation
 
 interface IControl {
     open fun validate(): ValidationResult

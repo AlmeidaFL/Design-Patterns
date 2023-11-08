@@ -1,8 +1,6 @@
 package behavioral.mediator.implementation
 
 import behavioral.mediator.Colleague
-import behavioral.mediator.IControl
-import behavioral.mediator.ValidationResult
 
 class Control(mediator: Mediator): Colleague(mediator), IControl {
     val children = mutableListOf<IControl>()
